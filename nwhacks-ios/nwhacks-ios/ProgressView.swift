@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressView: View {
     
-    //@EnvironmentObject var usrData: UserData
-    @ObservedObject var usrData = UserData()
+    @EnvironmentObject var usrData: UserData
+    //@ObservedObject var usrData = UserData()
     
     var body: some View {
         //ScrollView {
@@ -80,10 +80,14 @@ struct ProgressView: View {
                         ScrollView(.horizontal) {
                             
                             HStack {
-                                ForEach(1...dateDifference(currentDate: Date(), dateString: usrData.soberSince)[1], id: \.self) { index in
-                                    Image("M\(index)")
-                                        .resizable()
-                                        .frame(width: 80, height: 100)
+                                if dateDifference(currentDate: Date(), dateString: usrData.soberSince)[1] < 1 {
+                                    Text("You are \(30 - dateDifference(currentDate: Date(), dateString: usrData.soberSince)[2]) days away from your first month sober!")
+                                } else {
+                                    ForEach(1...dateDifference(currentDate: Date(), dateString: usrData.soberSince)[1], id: \.self) { index in
+                                        Image("M\(index)")
+                                            .resizable()
+                                            .frame(width: 80, height: 100)
+                                    }
                                 }
                             }
                         }
