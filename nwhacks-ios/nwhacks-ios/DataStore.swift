@@ -42,11 +42,13 @@ struct msgHistory {
     ]
 }
 
-class userData: ObservableObject {
+class UserData: ObservableObject {
     var name = "Gretel"
     var soberSince = "2023-12-25"
     var soberFrom = "Alcohol"
-    var reasonsQuit = ["I hate the way it makes me feel the next day - even if I’m not hungover. I feel tainted and gross. My liver feels like it’s being slowly churned.", "The price. You can spend a weeks-worth of groceries in one night if you’re out with friends.", "No matter how I try to control myself, I’m always embarrassed the next day by something I said or did."]
+    var reasonsQuit = "I hate the way it makes me feel the next day - even if I’m not hungover. I feel tainted and gross. My liver feels like it’s being slowly churned. The price. You can spend a weeks-worth of groceries in one night if you’re out with friends. No matter how I try to control myself, I’m always embarrassed the next day by something I said or did."
+    var freqWeek = 1
+    var cost = 0
     var pastConversations : [String : String] = [:]
     
     func generatePreamble() -> String {
@@ -101,7 +103,7 @@ class userData: ObservableObject {
                     
                             I have been sober from \(soberFrom) for \(dateDifference(currentDate: Date(), dateString: soberSince)[0]) years, \(dateDifference(currentDate: Date(), dateString: soberSince)[1]) months and \(dateDifference(currentDate: Date(), dateString: soberSince)[2])
                     
-                            My reasons to quit are \(reasonsQuit.joined(separator:",")). When appropriate in the right context, remind me how many days/months I've been sober. Also remind me of the reasons why I quit in the first place.
+                            My reasons to quit are \(reasonsQuit)). When appropriate in the right context, remind me how many days/months I've been sober. Also remind me of the reasons why I quit in the first place.
                     
                             These are the previous conversations we have had. Use it as a reference when generating future responses. The future responses shuld refer to past conversations and have a natural flow of conversation.
                     

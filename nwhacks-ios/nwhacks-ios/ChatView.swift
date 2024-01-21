@@ -10,7 +10,7 @@ import SwiftUI
 import OpenAI
 
 struct ChatView: View {
-    var usrData = userData()
+    var usrData = UserData()
     @State var messages = msgHistory.messages
     @State var newMessage: String = ""
     

@@ -19,6 +19,7 @@
 		0022EA132B5CA3B8004FDE34 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA122B5CA3B8004FDE34 /* Message.swift */; };
 		0022EA162B5CA98B004FDE34 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 0022EA152B5CA98B004FDE34 /* OpenAI */; };
 		0022EA182B5CCF38004FDE34 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA172B5CCF38004FDE34 /* DataStore.swift */; };
+		0022EA1A2B5CDD48004FDE34 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA192B5CDD48004FDE34 /* SetupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0022EA102B5CA39D004FDE34 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		0022EA122B5CA3B8004FDE34 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0022EA172B5CCF38004FDE34 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		0022EA192B5CDD48004FDE34 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				0022E9E42B5CA0AB004FDE34 /* nwhacks_iosApp.swift */,
 				0022E9E62B5CA0AB004FDE34 /* ChatView.swift */,
+				0022EA192B5CDD48004FDE34 /* SetupView.swift */,
 				0022EA0E2B5CA384004FDE34 /* MessageView.swift */,
 				0022EA122B5CA3B8004FDE34 /* Message.swift */,
 				0022EA102B5CA39D004FDE34 /* MessageCell.swift */,
@@ -280,6 +283,7 @@
 				0022EA0F2B5CA384004FDE34 /* MessageView.swift in Sources */,
 				0022EA182B5CCF38004FDE34 /* DataStore.swift in Sources */,
 				0022EA112B5CA39D004FDE34 /* MessageCell.swift in Sources */,
+				0022EA1A2B5CDD48004FDE34 /* SetupView.swift in Sources */,
 				0022EA132B5CA3B8004FDE34 /* Message.swift in Sources */,
 				0022E9E72B5CA0AB004FDE34 /* ChatView.swift in Sources */,
 				0022E9E52B5CA0AB004FDE34 /* nwhacks_iosApp.swift in Sources */,
