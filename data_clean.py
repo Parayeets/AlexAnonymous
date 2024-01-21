@@ -7,11 +7,11 @@ syst_role = {
 
 data = []
 
-fHandle = open("training_data/sheet2.csv", "r")
+fHandle = open("training_data/sheet2.tsv", "r")
 for i, line in enumerate(fHandle):
     if i == 0:
         continue
-    line = line.strip().split(",")
+    line = line.strip().split("\t")
     try:
         user_token = {"role": "user", "content": line[0] + line[1]}
         assi_token = {"role": "assistant", "content": line[2]}
@@ -20,11 +20,24 @@ for i, line in enumerate(fHandle):
         print(f"{line} has failed.")
 fHandle.close()
 
-fHandle = open("training_data/sheet5.csv", "r")
+fHandle = open("training_data/sheet3.tsv", "r")
 for i, line in enumerate(fHandle):
     if i == 0:
         continue
-    line = line.strip().split(",")
+    line = line.strip().split("\t")
+    try:
+        user_token = {"role": "user", "content": line[0] + line[1]}
+        assi_token = {"role": "assistant", "content": line[2]}
+        data.append({"messages": [syst_role, user_token, assi_token]})
+    except:
+        print(f"{line} has failed.")
+fHandle.close()
+
+fHandle = open("training_data/sheet3.tsv", "r")
+for i, line in enumerate(fHandle):
+    if i == 0:
+        continue
+    line = line.strip().split("\t")
     try:
         user_token = {"role": "user", "content": line[0]}
         assi_token = {"role": "assistant", "content": line[1]}
@@ -32,6 +45,7 @@ for i, line in enumerate(fHandle):
     except:
         print(f"{line} has failed.")
 fHandle.close()
+
 
 with open("training_data/data.jsonl", "w") as f:
     for line in data:
