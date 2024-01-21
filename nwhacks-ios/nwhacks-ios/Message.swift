@@ -12,11 +12,3 @@ struct Message: Hashable {
     var content: String
     var isCurrentUser: Bool
 }
-
-struct DataSource {
-    
-    static let messages = [
-        Message(content: "Hi there! How can I help you today?", isCurrentUser: false)
-    ]
-}
-

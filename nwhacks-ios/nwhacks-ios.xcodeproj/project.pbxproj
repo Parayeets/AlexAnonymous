@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0022E9E52B5CA0AB004FDE34 /* nwhacks_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022E9E42B5CA0AB004FDE34 /* nwhacks_iosApp.swift */; };
-		0022E9E72B5CA0AB004FDE34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022E9E62B5CA0AB004FDE34 /* ContentView.swift */; };
+		0022E9E72B5CA0AB004FDE34 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022E9E62B5CA0AB004FDE34 /* ChatView.swift */; };
 		0022E9E92B5CA0AC004FDE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0022E9E82B5CA0AC004FDE34 /* Assets.xcassets */; };
 		0022E9EC2B5CA0AC004FDE34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0022E9EB2B5CA0AC004FDE34 /* Preview Assets.xcassets */; };
 		0022E9F62B5CA0AC004FDE34 /* nwhacks_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022E9F52B5CA0AC004FDE34 /* nwhacks_iosTests.swift */; };
@@ -18,6 +18,7 @@
 		0022EA112B5CA39D004FDE34 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA102B5CA39D004FDE34 /* MessageCell.swift */; };
 		0022EA132B5CA3B8004FDE34 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA122B5CA3B8004FDE34 /* Message.swift */; };
 		0022EA162B5CA98B004FDE34 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 0022EA152B5CA98B004FDE34 /* OpenAI */; };
+		0022EA182B5CCF38004FDE34 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA172B5CCF38004FDE34 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		0022E9E12B5CA0AB004FDE34 /* nwhacks-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nwhacks-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0022E9E42B5CA0AB004FDE34 /* nwhacks_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nwhacks_iosApp.swift; sourceTree = "<group>"; };
-		0022E9E62B5CA0AB004FDE34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0022E9E62B5CA0AB004FDE34 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0022E9E82B5CA0AC004FDE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0022E9EB2B5CA0AC004FDE34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0022E9F12B5CA0AC004FDE34 /* nwhacks-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nwhacks-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +52,7 @@
 		0022EA0E2B5CA384004FDE34 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0022EA102B5CA39D004FDE34 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		0022EA122B5CA3B8004FDE34 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0022EA172B5CCF38004FDE34 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				0022E9E42B5CA0AB004FDE34 /* nwhacks_iosApp.swift */,
-				0022E9E62B5CA0AB004FDE34 /* ContentView.swift */,
+				0022E9E62B5CA0AB004FDE34 /* ChatView.swift */,
 				0022EA0E2B5CA384004FDE34 /* MessageView.swift */,
 				0022EA122B5CA3B8004FDE34 /* Message.swift */,
 				0022EA102B5CA39D004FDE34 /* MessageCell.swift */,
+				0022EA172B5CCF38004FDE34 /* DataStore.swift */,
 				0022E9E82B5CA0AC004FDE34 /* Assets.xcassets */,
 				0022E9EA2B5CA0AC004FDE34 /* Preview Content */,
 			);
@@ -275,9 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0022EA0F2B5CA384004FDE34 /* MessageView.swift in Sources */,
+				0022EA182B5CCF38004FDE34 /* DataStore.swift in Sources */,
 				0022EA112B5CA39D004FDE34 /* MessageCell.swift in Sources */,
 				0022EA132B5CA3B8004FDE34 /* Message.swift in Sources */,
-				0022E9E72B5CA0AB004FDE34 /* ContentView.swift in Sources */,
+				0022E9E72B5CA0AB004FDE34 /* ChatView.swift in Sources */,
 				0022E9E52B5CA0AB004FDE34 /* nwhacks_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
