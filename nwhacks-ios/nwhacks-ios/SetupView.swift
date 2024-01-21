@@ -10,10 +10,11 @@ import SwiftUI
 struct SetupView: View {
     
     @ObservedObject var usrData = UserData()
-    @State var whichQn = 0
+    @State var whichQn = 5
     @State var txtField = ""
     @State var date = Date.now
     @State var freqWeek: Double = 1
+    @State var pickerVal = 0
     @State private var willMoveToNextScreen = false
     
     var body: some View {
@@ -43,6 +44,8 @@ struct SetupView: View {
                     } else if whichQn == 3 {
                         reasonPick
                     } else if whichQn == 4 {
+                        personalityPick
+                    } else {
                         resourcePick
                     }
                     
@@ -55,7 +58,7 @@ struct SetupView: View {
                 .background(Image("welcome_image")
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all))
+                    .edgesIgnoringSafeArea(.all))
         }.environmentObject(usrData)
         
     }
@@ -142,7 +145,6 @@ struct SetupView: View {
                         .foregroundStyle(.black)
                 }
                 .onChange(of: date) {
-                    print("here")
                     let df = DateFormatter()
                     df.dateFormat = "yyyy-MM-dd"
                     usrData.soberSince = df.string(from: date)
@@ -183,6 +185,56 @@ struct SetupView: View {
                     Button("Next") {
                         usrData.reasonsQuit = txtField
                         txtField = ""
+                        if pickerVal == 0 {
+                            usrData.personality = "kind"
+                        } else if pickerVal == 1 {
+                            usrData.personality = "neutral"
+                        } else {
+                            usrData.personality = "mean"
+                        }
+                        withAnimation {
+                            whichQn += 1
+                        }
+                    }.frame(width: 100, alignment: .center)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 25))
+                        .foregroundStyle(.blue)
+                    Spacer()
+                }.padding(.top, 30)
+                Spacer()
+            }.frame(width: 300, height: 300)
+        }.padding(.top)
+    }
+    
+    var personalityPick: some View {
+        ZStack(alignment: .center) {
+            VStack(alignment: .leading) {
+                Text("How do you want your companion to sound like?")
+                    .fixedSize(horizontal: false, vertical: true)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.black)
+                    .frame(width: 300, alignment: .leading)
+                    .padding(.top)
+                
+                Picker(selection: $pickerVal, label: Text("")) {
+                    Text("Kind").tag(0)
+                    Text("Neutral").tag(1)
+                    Text("Strict").tag(2)
+                    
+                }.pickerStyle(SegmentedPickerStyle())
+                
+                HStack {
+                    Spacer()
+                    Button("Next") {
+                        if pickerVal == 0 {
+                            usrData.personality = "kind"
+                        } else if pickerVal == 1 {
+                            usrData.personality = "neutral"
+                        } else {
+                            usrData.personality = "mean"
+                        }
                         withAnimation {
                             whichQn += 1
                         }
@@ -201,7 +253,7 @@ struct SetupView: View {
     var resourcePick: some View {
         ZStack(alignment: .center) {
             VStack(alignment: .leading) {
-                Text("How frequent was your use per week?")
+                Text("How often did you engage in your addiction per week?")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -212,10 +264,10 @@ struct SetupView: View {
                 
                 HStack {
                     Slider(value: $freqWeek, in: 1...7, step: 1)
-                    Text("\(Int(freqWeek))")
+                    Text("\(Int(freqWeek)) days")
                 }
                 
-                Text("How much did you spend per week?")
+                Text("How much money did you spend per week?")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -233,7 +285,7 @@ struct SetupView: View {
                     )
                 //.padding(.leading)
                     .foregroundStyle(.black)
-               
+                
                 HStack {
                     NavigationLink("", destination: DashboardView(), isActive: $willMoveToNextScreen)
                     Spacer()

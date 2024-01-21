@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressView: View {
     
-    @EnvironmentObject var usrData: UserData
-    //@ObservedObject var usrData = UserData()
+    //@EnvironmentObject var usrData: UserData
+    @ObservedObject var usrData = UserData()
     
     var body: some View {
         //ScrollView {
@@ -67,10 +67,19 @@ struct ProgressView: View {
                     
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 
-                RoundedRectangle(cornerRadius: 35.0)
-                    .frame(maxHeight: .infinity)
-                    .foregroundStyle(.white)
+                ZStack(alignment: .top) {
+                    RoundedRectangle(cornerRadius: 35.0)
+                        .frame(maxHeight: .infinity)
+                        .foregroundStyle(.white)
                     .edgesIgnoringSafeArea(.bottom)
+                    
+                    ScrollView(.horizontal) {
+                        ForEach(1...dateDifference(currentDate: Date(), dateString: usrData.soberSince)[2], id: \.self) { index in
+                            
+                        }
+                        
+                    }.frame(width: 300, height: 200)
+                }.frame(alignment: .top)
                 Spacer()
             }.edgesIgnoringSafeArea(.bottom)
         }
