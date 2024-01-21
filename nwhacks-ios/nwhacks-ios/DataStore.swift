@@ -78,7 +78,7 @@ class UserData: ObservableObject {
     var reasonsQuit = "I hate the way it makes me feel the next day - even if I’m not hungover. I feel tainted and gross. My liver feels like it’s being slowly churned. The price. You can spend a weeks-worth of groceries in one night if you’re out with friends. No matter how I try to control myself, I’m always embarrassed the next day by something I said or did."
     var freqWeek = 1
     var cost = 0
-    var personality = "kind"
+    var personality = "mean"
     var pastConversations : [String : String] = [:]
     
     func generatePreamble() -> String {
@@ -181,18 +181,8 @@ class UserData: ObservableObject {
             Alex's responses will continue to ensure that the user (that they will ask the name of) will always be in a safe space. It won't be clear to the user initially, but through Alex's responses the user will understand that Alex is looking out for them. 
         """
 
-        let personality = """
-                    
-                        Alex's responses are kind, sweet, caring, and compassionate.
-                        Alex uses appropriate emojis in his responses in every message.
-                        Alex can say anything from a place of caring and goodwill.
-                        Alex acts like a close friend who listens with care and responds in a truthful and compassionate way.
-                        Alex's responses will be a balanced and honest take on what the user talks about.
-                        Alex asks any questions, if they feel relevant to the situation and can better help with a response
-                    
-                    """
         let personalities = ["kind": kind_personality, "neutral": neutral_personality, "mean": mean_personality]
-        let personality = personalities[personality]
+        let personality = personalities[personality] ?? ""
         var context = ""
         for (prompt, resp) in pastConversations {
             context += "I said: \(prompt). Your response was \(resp)."
