@@ -20,6 +20,10 @@ struct DashboardView: View {
             ChatView()
                 .tabItem { Label("Chat", systemImage: "message.fill") }
                 .environmentObject(usrData)
+            
+            ResourcesView()
+                .tabItem { Label("Resources", systemImage: "link")}
+                .environmentObject(usrData)
         }.navigationBarBackButtonHidden(true)
     }
 }

@@ -22,6 +22,7 @@
 		0022EA1A2B5CDD48004FDE34 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA192B5CDD48004FDE34 /* SetupView.swift */; };
 		0022EA1E2B5D0D3C004FDE34 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022EA1D2B5D0D3C004FDE34 /* DashboardView.swift */; };
 		00C3BA382B5D0F6400E80DDC /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3BA372B5D0F6400E80DDC /* ProgressView.swift */; };
+		980FFA122B5D572400DA1F29 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980FFA112B5D572400DA1F29 /* ResourcesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		0022EA192B5CDD48004FDE34 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		0022EA1D2B5D0D3C004FDE34 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		00C3BA372B5D0F6400E80DDC /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		980FFA112B5D572400DA1F29 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResourcesView.swift; path = "nwhacks-ios/ResourcesView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		0022E9D82B5CA0AB004FDE34 = {
 			isa = PBXGroup;
 			children = (
+				980FFA112B5D572400DA1F29 /* ResourcesView.swift */,
 				0022E9E32B5CA0AB004FDE34 /* nwhacks-ios */,
 				0022E9F42B5CA0AC004FDE34 /* nwhacks-iosTests */,
 				0022E9FE2B5CA0AC004FDE34 /* nwhacks-iosUITests */,
@@ -290,6 +293,7 @@
 				0022EA182B5CCF38004FDE34 /* DataStore.swift in Sources */,
 				0022EA1E2B5D0D3C004FDE34 /* DashboardView.swift in Sources */,
 				0022EA112B5CA39D004FDE34 /* MessageCell.swift in Sources */,
+				980FFA122B5D572400DA1F29 /* ResourcesView.swift in Sources */,
 				0022EA1A2B5CDD48004FDE34 /* SetupView.swift in Sources */,
 				0022EA132B5CA3B8004FDE34 /* Message.swift in Sources */,
 				0022E9E72B5CA0AB004FDE34 /* ChatView.swift in Sources */,
