@@ -10,7 +10,7 @@ import SwiftUI
 struct SetupView: View {
     
     @ObservedObject var usrData = UserData()
-    @State var whichQn = 5
+    @State var whichQn = 0
     @State var txtField = ""
     @State var date = Date.now
     @State var freqWeek: Double = 1
@@ -29,7 +29,7 @@ struct SetupView: View {
                         .padding(.top, 100)
                         .foregroundStyle(.black)
                     
-                    Text("I'm Ansel and I'm here to help you stay on track with your sobriety.")
+                    Text("I'm Alex and I'm here to help you stay on track with your sobriety.")
                         .font(.title3)
                         .frame(width: 300)
                         .padding(.top, 5)

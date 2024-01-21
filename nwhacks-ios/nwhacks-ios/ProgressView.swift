@@ -67,25 +67,49 @@ struct ProgressView: View {
                     
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 
-                ZStack(alignment: .top) {
+                ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 35.0)
                         .frame(maxHeight: .infinity)
                         .foregroundStyle(.white)
-                    .edgesIgnoringSafeArea(.bottom)
+                        .edgesIgnoringSafeArea(.bottom)
                     
-                    ScrollView(.horizontal) {
-                        ForEach(1...dateDifference(currentDate: Date(), dateString: usrData.soberSince)[2], id: \.self) { index in
+                    VStack(alignment: .leading) {
+                        Text("Milestones")
+                            .fontWeight(.heavy)
+                            .font(.title2)
+                        ScrollView(.horizontal) {
                             
+                            HStack {
+                                ForEach(1...dateDifference(currentDate: Date(), dateString: usrData.soberSince)[1], id: \.self) { index in
+                                    Image("M\(index)")
+                                        .resizable()
+                                        .frame(width: 80, height: 100)
+                                }
+                            }
                         }
                         
-                    }.frame(width: 300, height: 200)
+                        Text("Your reasons for staying sober")
+                            .fontWeight(.heavy)
+                            .font(.title2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top, 30)
+                        
+                        ScrollView {
+                            Text("\(usrData.reasonsQuit)")
+                                .padding(.top)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(height: 200)
+                        }
+                        
+                    }.frame(width: 300, height: 350)
+                        .padding(25)
                 }.frame(alignment: .top)
+                
                 Spacer()
             }.edgesIgnoringSafeArea(.bottom)
         }
         
     }
-    //}
 }
 
 #Preview {

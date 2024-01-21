@@ -73,7 +73,7 @@ struct msgHistory {
 
 class UserData: ObservableObject {
     var name = "Gretel"
-    var soberSince = "2023-12-25"
+    var soberSince = "2023-07-25"
     var soberFrom = "Alcohol"
     var reasonsQuit = "I hate the way it makes me feel the next day - even if I’m not hungover. I feel tainted and gross. My liver feels like it’s being slowly churned. The price. You can spend a weeks-worth of groceries in one night if you’re out with friends. No matter how I try to control myself, I’m always embarrassed the next day by something I said or did."
     var freqWeek = 1
