@@ -15,9 +15,10 @@ response = client.chat.completions.create(
 )
 
 print(response.choices[0].message.content)
+print("\n\n")
 
 response = client.chat.completions.create(
-    model="ft:gpt-3.5-turbo-1106:personal::8jGSQuqX",
+    model="ft:gpt-3.5-turbo-1106:personal::8jHoUVzC",
     messages=[
         {
             "role": "system",
