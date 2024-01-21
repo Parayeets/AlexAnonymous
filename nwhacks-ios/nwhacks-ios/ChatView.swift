@@ -10,7 +10,7 @@ import SwiftUI
 import OpenAI
 
 struct ChatView: View {
-    var usrData = UserData()
+    @EnvironmentObject var usrData: UserData
     @State var messages = msgHistory.messages
     @State var newMessage: String = ""
     
@@ -53,7 +53,6 @@ struct ChatView: View {
                 .padding()
             }
         }.preferredColorScheme(.light)
-        
         
         
     }

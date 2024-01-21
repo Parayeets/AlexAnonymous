@@ -56,7 +56,7 @@ struct SetupView: View {
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all))
-        }
+        }.environmentObject(usrData)
         
     }
     
@@ -215,7 +215,7 @@ struct SetupView: View {
                     Text("\(Int(freqWeek))")
                 }
                 
-                Text("How much did you spend per use?")
+                Text("How much did you spend per week?")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.title2)
                     .fontWeight(.semibold)
@@ -235,7 +235,7 @@ struct SetupView: View {
                     .foregroundStyle(.black)
                
                 HStack {
-                    NavigationLink("", destination: ChatView(), isActive: $willMoveToNextScreen)
+                    NavigationLink("", destination: DashboardView(), isActive: $willMoveToNextScreen)
                     Spacer()
                     Button("Next") {
                         usrData.freqWeek = Int(freqWeek)

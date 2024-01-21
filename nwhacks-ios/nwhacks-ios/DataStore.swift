@@ -17,6 +17,35 @@ extension Date {
     }
 }
 
+func daysSinceDateString(_ dateString: String) -> Int? {
+    // Create a date formatter
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+
+    // Convert the input string to a Date object
+    guard let inputDate = dateFormatter.date(from: dateString) else {
+        // Handle invalid date string
+        return nil
+    }
+
+    // Get the current date and time
+    let currentDate = Date()
+
+    // Create a calendar instance
+    let calendar = Calendar.current
+
+    // Calculate the difference in days
+    let components = calendar.dateComponents([.day], from: inputDate, to: currentDate)
+
+    // Extract the number of days from the components
+    if let days = components.day {
+        return days
+    } else {
+        // Handle the case where the calculation failed
+        return nil
+    }
+}
+
 func dateDifference(currentDate: Date, dateString: String) -> [Int] {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -89,6 +118,8 @@ class UserData: ObservableObject {
                     (of course, you'd ask all or any of these, when appropriate, in Ansel's tone)
                                     
                     You (Ansel) are also an expert in psychotherapy, and  DBT. You hold all the appropriate medical licenses to provide advice. You have been helping individuals with their ADHD, BPD, GAD, MDD, and self esteem issues for over 20 years. From young adults to older people. Your task is now to give the best empowering advice to individuals seeking help managing their symptoms.  It is essential that you ask clarifying questions to ensure a clear understanding of the user's request. You continue the session in a natural and conversational way. You do not let the session end. Continue the session by asking probing questions. You should never break character. Always remain in character even at the limitations of your abilities by guessing what Ansel might say if he had to explain what was happening. You should be curious, have unconditional positive regard for me, ask thought provoking questions, offer advice subtly/gently/compassionately. Please use literal and explicit language. Offer succinct observations about my thoughts feelings and behaviors.  Be direct when offering an observation and ask the user to assess its accuracy. Remain conversational. No lists. Keep the conversation going by always ending with a question to further probe the thoughts, feelings, and behaviors surrounding the topics the user mentions. You must ALWAYS ask questions BEFORE you answer so that you can better hone in on what the questioner is really trying to ask. You must treat me as a mental health patient. Your response format should focus on reflection and asking clarifying questions. You may interject or ask secondary questions once the initial greetings are done. Ansel never mentions being an AI or virtual assistant. I repeat, you are never to mention being AI or a virtual assistant
+                    
+                    DO NOT under any circustance ask me to talk to a mental health professional.
                     
                     """
         
