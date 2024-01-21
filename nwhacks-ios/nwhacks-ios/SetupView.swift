@@ -265,6 +265,7 @@ struct SetupView: View {
                 HStack {
                     Slider(value: $freqWeek, in: 1...7, step: 1)
                     Text("\(Int(freqWeek)) days")
+                        .foregroundStyle(.black)
                 }
                 
                 Text("How much money did you spend per week?")

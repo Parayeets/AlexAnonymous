@@ -34,7 +34,7 @@ struct ResourceView: View {
                 }
             }
             .navigationTitle("Resources")
-        }
+        }.preferredColorScheme(.light)
     }
 }
 

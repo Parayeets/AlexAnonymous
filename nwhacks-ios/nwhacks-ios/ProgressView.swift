@@ -77,6 +77,7 @@ struct ProgressView: View {
                         Text("Milestones")
                             .fontWeight(.heavy)
                             .font(.title2)
+                            .foregroundStyle(.black)
                         ScrollView(.horizontal) {
                             
                             HStack {
@@ -97,12 +98,14 @@ struct ProgressView: View {
                             .font(.title2)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.top, 30)
+                            .foregroundStyle(.black)
                         
                         ScrollView {
                             Text("\(usrData.reasonsQuit)")
                                 .padding(.top)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(height: 200)
+                                .foregroundStyle(.black)
                         }
                         
                     }.frame(width: 300, height: 350)
