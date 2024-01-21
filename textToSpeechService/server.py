@@ -7,10 +7,16 @@ app = Flask(__name__)
 def test():
     return 'Hello World!'
 
-@app.route('/tts/')
+@app.route('/tts', methods=['POST'])
 def tts():
-    text = request.args.get('text')
-    voice = request.args.get('voice')
+    data = request.json
+
+    if 'text' not in data or 'voice' not in data:
+        return jsonify({'error': 'Missing text or voice parameter'}), 400
+
+    text = data['text']
+    voice = data['voice']
+
     speech = generateSpeech("output.wav", text, voice)
     return send_file(speech, mimetype='audio/wav')
 
